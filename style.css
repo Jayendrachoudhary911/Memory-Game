@@ -1,0 +1,216 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top left, #f3d6ff, #d8fff7) no-repeat fixed;
+  font-family: "Fredoka", sans-serif;
+}
+
+.bdy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: #111111;
+  text-align: center;
+}
+
+.topTools {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 10px 0;
+}
+
+.topTools .time {
+  font-weight: bold;
+  font-size: 25px;
+  color: #0f0f0f;
+}
+
+.topTools img {
+  width: 20px;
+  height: 20px;
+}
+
+/*card container */
+.memory-game {
+  width: 550px;
+  margin: auto;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.memory-card {
+  margin: 5px;
+  border-radius: 16px;
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  position: relative;
+  transform: scale(1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: transform 0.5s; /* dönme efekti verir*/
+  box-shadow: 5px 2px 20px 0 rgba(82, 102, 117, 0.5);
+}
+
+.memory-card:hover {
+  cursor: pointer;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+}
+
+.back-face {
+  background-color: #18395a9f;
+  backdrop-filter: blur(19px);
+  border-radius: 16px;
+}
+
+.front-face {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+
+img {
+  width: 100px;
+  border-radius: 16px;
+}
+
+/*congrats section (gameWon) */
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+#congratsSection {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+#congratsDiv {
+  width: 300px;
+  background: #ffffffbd;
+  backdrop-filter: blur(16px);
+  color: #1d1d1d;
+  padding: 20px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+}
+#congratsDiv img {
+  border-radius: 20px;
+}
+.final {
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.again {
+  font-size: 20px;
+  font-weight: bold;
+  color: #202020;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px 20px;
+  width: 160px;
+  border: solid 1px;
+  border-radius: 22px;
+}
+
+.again:hover {
+  background: #6186aa;
+  background-image: linear-gradient(to top left, #ffd2a7, #fff9bf);
+  background-size: 250%;
+  color: #161616;
+  cursor: pointer;
+}
+
+/*responsive*/
+@media only screen and (max-width: 768px) {
+  h1 {
+    margin-top: 100px;
+    font-size: 22px;
+  }
+
+  .topTools {
+    margin: 20px 0 20px 0;
+  }
+
+  .topTools .time {
+    font-weight: thin;
+    font-size: 18px;
+  }
+
+  .topTools img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .memory-game {
+    width: 350px;
+    height: 450px;
+  }
+
+  .memory-card {
+    margin: 5px;
+    width: calc(33.333% - 10px);
+    height: calc(25% - 10px);
+    border-radius: 16px;
+  }
+}
+
+ .refresh {
+  background-color: #20202075;
+  padding: 2vh;
+  border-radius: 50vh;
+ }
